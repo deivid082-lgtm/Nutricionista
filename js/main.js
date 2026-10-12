@@ -30,7 +30,13 @@
     items.forEach((it) => {
       const ok = f === "all" || it.dataset.cat.split(" ").includes(f);
       it.hidden = !ok;
-      if (ok) { shown++; it.classList.add("in"); }
+      if (ok) {
+        shown++; it.classList.add("in");
+        it.classList.remove("is-entering");
+        void it.offsetWidth; // reinicia la animación si se pulsa otro filtro enseguida
+        it.classList.add("is-entering");
+        it.addEventListener("animationend", () => it.classList.remove("is-entering"), { once: true });
+      }
     });
     list.classList.toggle("is-filtered", f !== "all");
     empty.hidden = shown > 0;
