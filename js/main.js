@@ -91,6 +91,10 @@
     });
   }
 
+  // Todo lo anterior se ejecutó sin errores: ahora sí se ocultan los elementos que dependen del script
+  // (menú móvil, flechas, revelado). Si el script fallara, la página se queda visible y usable.
+  document.documentElement.classList.add("js-ready");
+
   // Revelado al hacer scroll (IntersectionObserver, sin listeners de scroll)
   const els = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
