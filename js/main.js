@@ -91,6 +91,18 @@
     });
   }
 
+  // "crisis" tiembla una vez por sesión y se calma (detalle de humor, solo sin movimiento reducido)
+  try {
+    const crisis = document.querySelector(".brand span");
+    if (crisis && !matchMedia("(prefers-reduced-motion: reduce)").matches && !sessionStorage.getItem("crisis")) {
+      sessionStorage.setItem("crisis", "1");
+      setTimeout(() => {
+        crisis.classList.add("is-shaking");
+        crisis.addEventListener("animationend", () => crisis.classList.remove("is-shaking"), { once: true });
+      }, 900);
+    }
+  } catch (e) { /* sin sessionStorage: no pasa nada */ }
+
   // Todo lo anterior se ejecutó sin errores: ahora sí se ocultan los elementos que dependen del script
   // (menú móvil, flechas, revelado). Si el script fallara, la página se queda visible y usable.
   document.documentElement.classList.add("js-ready");

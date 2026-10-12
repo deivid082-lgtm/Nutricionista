@@ -360,9 +360,24 @@ h1 em { text-decoration-style: wavy; }
 .rp__ing li { padding: .6rem 0; border-bottom: 1px solid var(--line); }
 .rp__ing li:last-child { border-bottom: 0; }
 .rp__steps ol { list-style: none; counter-reset: paso; margin: 1rem 0 0; padding: 0; display: grid; gap: 1.25rem; }
-.rp__steps li { counter-increment: paso; position: relative; padding-left: 3.25rem; max-width: 60ch; }
-.rp__steps li::before { content: counter(paso); position: absolute; left: 0; top: -.1rem; display: grid; place-items: center; width: 2.25rem; height: 2.25rem;
-  border-radius: 999px; background: var(--accent); color: var(--on-accent); font: 700 1rem/1 var(--font-display); font-variant-numeric: tabular-nums; }
+.rp__steps li { counter-increment: paso; max-width: 60ch; }
+.rp__hint { margin-top: .5rem; color: var(--muted); font-size: var(--fs-small); }
+
+/* Pasos que se marcan al tocarlos: casilla accesible sin JavaScript */
+.step { position: relative; display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: 1rem; align-items: start; cursor: pointer; -webkit-user-select: none; user-select: none; }
+.step__box { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; pointer-events: none; }
+.step__dot { position: relative; display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 999px; border: 2px solid var(--accent);
+  color: var(--accent-text); transition: transform .16s var(--ease); }
+.step__dot::before { content: counter(paso); font: 700 1rem/1 var(--font-display); font-variant-numeric: tabular-nums; }
+.step__dot::after { content: ""; position: absolute; inset: -2px; border-radius: 999px; background: var(--accent);
+  clip-path: circle(0% at 50% 50%); transition: clip-path .16s var(--ease); }
+.step__text { padding-top: .35rem; transition: color .16s var(--ease), opacity .16s var(--ease); }
+.step:active .step__dot { transform: scale(.95); }
+.step__box:checked + .step__dot::after { clip-path: circle(75% at 50% 50%); }
+.step__box:checked + .step__dot::before { color: var(--on-accent); z-index: 1; content: ""; width: .5rem; height: .85rem; margin-top: -.15rem;
+  border: solid var(--on-accent); border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
+.step__box:checked ~ .step__text { color: var(--muted); }
+.step__box:focus-visible + .step__dot { outline: 3px solid var(--accent-text); outline-offset: 3px; }
 .rp__tip { margin-top: 2rem; padding: 1rem 1.25rem; border-radius: var(--r-ctl); background: var(--tint); max-width: 60ch; }
 .rp__note { margin: 2.5rem 0 1.25rem; color: var(--muted); font-size: var(--fs-small); }
 @media (max-width: 860px) {
@@ -370,3 +385,15 @@ h1 em { text-decoration-style: wavy; }
   .rp__photo, .rp__ing, .rp__steps { grid-column: 1; grid-row: auto; }
 }
 .photo--tall img { object-position: 74% 38%; }
+
+/* Transición entre páginas: la foto de la tarjeta crece hasta su sitio en la receta (Chrome, Edge y Safari recientes) */
+@view-transition { navigation: auto; }
+::view-transition-group(*) { animation-duration: .26s; animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1); }
+::view-transition-group(root) { animation-duration: .15s; }
+@media (prefers-reduced-motion: reduce) { @view-transition { navigation: none; } }
+
+/* La palabra "crisis" tiembla una vez por sesión y se calma */
+@media (prefers-reduced-motion: no-preference) {
+  .brand span.is-shaking { animation: crisis .5s cubic-bezier(0.77, 0, 0.175, 1) both; }
+  @keyframes crisis { 0%, 100% { translate: 0 0; } 15% { translate: -2px 0; } 30% { translate: 2px 0; } 45% { translate: -1.5px 0; } 60% { translate: 1.5px 0; } 80% { translate: -.5px 0; } }
+}

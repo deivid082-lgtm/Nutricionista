@@ -8,7 +8,7 @@
   <meta name="color-scheme" content="light dark">
   <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/styles.css?v=202610121558">
+  <link rel="stylesheet" href="../css/styles.css?v=202610121715">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="page-recipe">
@@ -43,7 +43,7 @@
         </ul>
       </header>
       <div class="rp__grid">
-        <figure class="photo photo--recipe rp__photo" data-file="receta-3.jpg"><img src="../img/receta-3.jpg" alt="Tortitas de avena y plátano" width="1200" height="900" fetchpriority="high"></figure>
+        <figure class="photo photo--recipe rp__photo" style="view-transition-name: foto-tortitas-de-avena-y-platano" data-file="receta-3.jpg"><img src="../img/receta-3.jpg" alt="Tortitas de avena y plátano" width="1200" height="900" fetchpriority="high"></figure>
         <section class="rp__ing" aria-labelledby="ing">
           <h2 id="ing">Ingredientes</h2>
         <h3>Masa</h3>
@@ -63,12 +63,13 @@
         </section>
         <section class="rp__steps" aria-labelledby="pasos">
           <h2 id="pasos">Paso a paso</h2>
+          <p class="rp__hint">Toca cada paso para marcarlo mientras cocinas.</p>
           <ol>
-          <li>Tritura el plátano, la avena, la bebida vegetal, la levadura, la canela y la sal hasta que no queden grumos.</li>
-          <li>Déjala reposar 5 minutos para que la avena espese.</li>
-          <li>Calienta una sartén antiadherente con un hilo de aceite a fuego medio.</li>
-          <li>Vierte cucharadas de masa para hacer tortitas de unos 8 cm. Cocina unos 2 minutos, hasta que salgan burbujas, dales la vuelta y cocina 1 o 2 minutos más.</li>
-          <li>Sírvelas calientes con la fruta, los frutos secos o el yogur.</li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Tritura el plátano, la avena, la bebida vegetal, la levadura, la canela y la sal hasta que no queden grumos.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Déjala reposar 5 minutos para que la avena espese.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Calienta una sartén antiadherente con un hilo de aceite a fuego medio.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Vierte cucharadas de masa para hacer tortitas de unos 8 cm. Cocina unos 2 minutos, hasta que salgan burbujas, dales la vuelta y cocina 1 o 2 minutos más.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Sírvelas calientes con la fruta, los frutos secos o el yogur.</span></label></li>
           </ol>
           <p class="rp__tip"><strong>Truco:</strong> Si la masa queda muy espesa, añade una cucharada más de bebida vegetal.</p>
         </section>
@@ -85,6 +86,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=202610121558" defer></script>
+  <script src="../js/main.js?v=202610121715" defer></script>
 </body>
 </html>
