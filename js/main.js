@@ -42,6 +42,29 @@
     empty.hidden = shown > 0;
   }));
 
+  // Cítricos de la portada: desplazamiento suave con el puntero (solo ratón) y pausa fuera de pantalla
+  const hero = document.querySelector(".hero");
+  const art = document.querySelector(".hero__art");
+  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (hero && art && !calm) {
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(([e]) => hero.classList.toggle("is-offscreen", !e.isIntersecting)).observe(hero);
+    }
+    if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      let raf = 0;
+      hero.addEventListener("pointermove", (e) => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          const r = hero.getBoundingClientRect();
+          art.style.setProperty("--px", ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+          art.style.setProperty("--py", ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+        });
+      });
+      hero.addEventListener("pointerleave", () => { art.style.setProperty("--px", 0); art.style.setProperty("--py", 0); });
+    }
+  }
+
   // Copiar el correo cuando el enlace mailto no abre ninguna app
   const copyBtn = document.querySelector(".copy");
   if (copyBtn) {

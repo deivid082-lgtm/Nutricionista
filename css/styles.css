@@ -315,3 +315,37 @@ h1 em { text-decoration-style: wavy; }
   .brand { font-size: .9rem; }
   .btn--sm { font-size: .85rem; padding: .55rem .65rem; }
 }
+
+/* Cítricos de la portada: rodajas hechas solo con gradientes, detrás de la foto.
+   Aparecen una vez, giran muy despacio y se desplazan un poco con el puntero.
+   Todo es transform: se pausa fuera de pantalla y se apaga con movimiento reducido. */
+.hero { position: relative; overflow: clip; }
+.hero__art { position: relative; justify-self: end; width: 100%; }
+.hero__art .photo { position: relative; z-index: 1; margin-top: 0; }
+.citrus { position: absolute; z-index: 0; width: var(--s); aspect-ratio: 1; pointer-events: none;
+  translate: calc(var(--px, 0) * var(--tx, -14px)) calc(var(--py, 0) * var(--ty, -10px));
+  transition: translate .6s var(--ease); }
+.citrus i { display: block; width: 100%; height: 100%; box-sizing: border-box; border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--pith) 0 7%, transparent 7.5%),
+    repeating-conic-gradient(var(--flesh) 0 24deg, var(--pith) 24deg 30deg);
+  border: calc(var(--s) * .055) solid var(--rind);
+  box-shadow: inset 0 0 0 calc(var(--s) * .03) var(--pith); }
+.citrus--orange { --s: clamp(150px, 21vw, 300px); --rind: #ff9a52; --flesh: #ffb27a; --pith: #ffe3cc;
+  top: calc(var(--s) * -.26); right: calc(var(--s) * -.28); }
+.citrus--lime { --s: clamp(96px, 12vw, 170px); --rind: #a9c9a0; --flesh: #c6dcc0; --pith: #e6f0e3; --tx: 12px; --ty: 8px;
+  bottom: calc(var(--s) * -.22); left: calc(var(--s) * -.4); }
+@media (prefers-reduced-motion: no-preference) {
+  .citrus { animation: citrus-in .9s var(--ease) .25s both; }
+  .citrus--lime { animation-delay: .4s; }
+  .citrus i { animation: citrus-spin 70s linear infinite; }
+  .citrus--lime i { animation-duration: 90s; animation-direction: reverse; }
+  .hero.is-offscreen .citrus i { animation-play-state: paused; }
+  @keyframes citrus-in { from { opacity: 0; scale: .82; } }
+  @keyframes citrus-spin { to { rotate: 360deg; } }
+}
+@media (max-width: 860px) {
+  .hero__art { margin-top: .5rem; }
+  .citrus--orange { --s: 150px; top: -48px; right: -36px; }
+  .citrus--lime { --s: 96px; bottom: -28px; left: -30px; }
+}
