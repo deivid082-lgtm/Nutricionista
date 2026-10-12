@@ -36,4 +36,3 @@
 h1, h2, h3, .brand, .recipe h3 { font-weight: 400; letter-spacing: -.01em; }
 .hero h1 em { text-decoration-style: wavy; }
 
-@media (max-width: 420px) { .brand { font-size: .92rem; } .btn--sm { padding: .55rem .6rem; } }
