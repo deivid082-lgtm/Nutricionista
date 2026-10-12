@@ -19,7 +19,6 @@
       <a class="brand" href="#inicio" aria-label="Nutricionista en crisis, inicio">Nutricionista <span>en crisis</span></a>
       <nav class="nav__links" id="menu" aria-label="Principal">
         <a href="#recetas">Recetas</a>
-        <a href="#mi-cocina">Mi cocina</a>
         <a href="#como-trabajo">Cómo trabajo</a>
         <a href="#sobre-mi">Sobre mí</a>
       </nav>
@@ -37,10 +36,9 @@
       <div class="wrap hero__grid">
         <div class="hero__copy">
           <h1>Come sano, pero que <em>esté buenísimo.</em></h1>
-          <p class="hero__sub">Recetas sencillas, creadas por una dietista de hospital que no renuncia al sabor.</p>
+          <p class="hero__sub">Recetas sencillas, de quien lleva más de 20 años elaborando los menús de un hospital materno-infantil.</p>
           <div class="hero__cta">
             <a class="btn" href="#recetas">Ver recetas <i class="ico ico--arrow" aria-hidden="true"></i></a>
-            <a class="btn btn--ghost" href="#consulta">Reservar consulta</a>
           </div>
         </div>
         <figure class="photo photo--hero" data-file="hero.jpg">
@@ -52,12 +50,12 @@
     <!-- RECETARIO: grid con ritmo + filtros -->
     <section class="section" id="recetas">
       <div class="wrap">
-        <div class="section__head reveal">
+        <div class="section__head">
           <h2>Recetas que invento y pruebo yo</h2>
           <p>Platos sencillos que nutren, con el sabor bien cuidado.</p>
         </div>
 
-        <div class="filters reveal" role="group" aria-label="Filtrar recetas">
+        <div class="filters" role="group" aria-label="Filtrar recetas">
           <button type="button" class="chip" data-filter="all" aria-pressed="true">Todas</button>
           <button type="button" class="chip" data-filter="desayunos" aria-pressed="false">Desayunos</button>
           <button type="button" class="chip" data-filter="meriendas" aria-pressed="false">Meriendas</button>
@@ -107,25 +105,16 @@
       </div>
     </section>
 
-    <!-- MI COCINA: declaración tipográfica -->
-    <section class="section section--tint" id="mi-cocina">
-      <div class="wrap statement reveal">
-        <h2>Alimentos que nutren, con todo su sabor</h2>
-        <p>Elijo alimentos que nutran y me esfuerzo en potenciar su sabor. Juego con las preparaciones y uso lo que sé de nutrición para combinar los ingredientes de la mejor manera.</p>
-        <p>Ahora me estoy especializando en alimentación vegana.</p>
-      </div>
-    </section>
-
     <!-- CÓMO TRABAJO: filas tipográficas -->
     <section class="section" id="como-trabajo">
       <div class="wrap">
-        <div class="section__head reveal">
+        <div class="section__head">
           <h2>Cómo trabajo contigo</h2>
         </div>
         <ol class="steps">
-          <li class="reveal"><h3>Hablamos</h3><p>Me cuentas cómo comes, qué te gusta y qué necesidades o patologías debemos tener en cuenta.</p></li>
-          <li class="reveal"><h3>Diseñamos</h3><p>Preparo un menú a tu medida, con guías de nutrición actualizadas y platos que den ganas de cocinar.</p></li>
-          <li class="reveal"><h3>Seguimos</h3><p>Revisamos cómo te va, resolvemos dudas y ajustamos lo que haga falta.</p></li>
+          <li><h3>Hablamos</h3><p>Me cuentas cómo comes, qué te gusta y qué necesidades o patologías debemos tener en cuenta.</p></li>
+          <li><h3>Diseñamos</h3><p>Preparo un menú a tu medida, con platos que den ganas de cocinar.</p></li>
+          <li><h3>Seguimos</h3><p>Revisamos cómo te va, resolvemos dudas y ajustamos lo que haga falta.</p></li>
         </ol>
       </div>
     </section>
@@ -133,13 +122,14 @@
     <!-- SOBRE MÍ -->
     <section class="section section--tint" id="sobre-mi">
       <div class="wrap split split--reverse">
-        <div class="split__body reveal">
+        <div class="split__body">
           <h2>Hola, soy Miriam</h2>
+          <p class="lead">Apuesto por la comida saludable, elijo alimentos que nutran, además de intentar potenciar su sabor.</p>
           <p>Soy técnico en Dietética y diplomada en Nutrición y Dietética por la Universidad de Barcelona. Llevo más de 20 años trabajando en la unidad de restauración colectiva de un hospital materno-infantil referente. Desde hace años, parte de mi labor en el hospital es elaborar los menús, teniendo en cuenta patologías y guías de nutrición actualizadas. Actualmente me estoy especializando en alimentación vegana.</p>
-          <p>Además soy una apasionada de la cocina, me encanta inventar, probar y crear mis propias recetas. Apuesto por la comida saludable, elijo alimentos que nutran, además de intentar potenciar su sabor. Me encanta jugar con las preparaciones y mis conocimientos en alimentación me ayudan a realizar combinaciones óptimas para nutrirnos y, además, disfrutar comiendo.</p>
+          <p>Además soy una apasionada de la cocina, me encanta inventar, probar y crear mis propias recetas. Me encanta jugar con las preparaciones y mis conocimientos en alimentación me ayudan a realizar combinaciones óptimas para nutrirnos y, además, disfrutar comiendo.</p>
           <a class="link" href="https://www.instagram.com/nutricionista_en_crisis/" rel="noopener">Sígueme en Instagram <i class="ico ico--up-right" aria-hidden="true"></i></a>
         </div>
-        <figure class="photo photo--tall reveal" data-file="miriam.jpg">
+        <figure class="photo photo--tall" data-file="miriam.jpg">
           <img src="img/miriam.jpg" alt="Miriam sonriendo en su cocina" width="800" height="1000" loading="lazy">
         </figure>
       </div>
@@ -150,12 +140,16 @@
       <div class="wrap">
         <div class="cta reveal">
           <h2>¿Hablamos de lo que comes?</h2>
-          <p>Escríbeme y te cuento cómo funciona la consulta individual y la consulta online.</p>
+          <p>Escríbeme para reservar tu consulta individual u online.</p>
           <div class="cta__actions">
             <!-- TODO: cambiar por tu correo real -->
             <a class="btn btn--on-accent" href="mailto:hola@tudominio.com?subject=Reservar%20consulta">Reservar consulta <i class="ico ico--arrow" aria-hidden="true"></i></a>
             <a class="btn btn--outline-on-accent" href="https://www.instagram.com/nutricionista_en_crisis/" rel="noopener"><i class="ico ico--insta" aria-hidden="true"></i>@nutricionista_en_crisis</a>
           </div>
+          <!-- TODO: cambiar el correo en los dos sitios (enlace de arriba y este texto) -->
+          <p class="cta__mail">O escríbeme a <span class="cta__addr">hola@tudominio.com</span>
+            <button type="button" class="copy" data-copy="hola@tudominio.com">Copiar correo</button>
+            <span class="copy__status" role="status" aria-live="polite"></span></p>
         </div>
       </div>
     </section>

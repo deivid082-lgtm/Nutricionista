@@ -36,6 +36,28 @@
     empty.hidden = shown > 0;
   }));
 
+  // Copiar el correo cuando el enlace mailto no abre ninguna app
+  const copyBtn = document.querySelector(".copy");
+  if (copyBtn) {
+    const status = document.querySelector(".copy__status");
+    const say = (msg) => { status.textContent = msg; setTimeout(() => { status.textContent = ""; }, 3000); };
+    copyBtn.addEventListener("click", async () => {
+      const text = copyBtn.dataset.copy;
+      try {
+        await navigator.clipboard.writeText(text);
+        say("Correo copiado");
+      } catch {
+        const addr = document.querySelector(".cta__addr");
+        const range = document.createRange();
+        range.selectNodeContents(addr);
+        const sel = getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        say("Selecciónalo y cópialo a mano");
+      }
+    });
+  }
+
   // Revelado al hacer scroll (IntersectionObserver, sin listeners de scroll)
   const els = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
