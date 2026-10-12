@@ -9,43 +9,47 @@
   // Menú móvil
   const toggle = document.querySelector(".nav__toggle");
   const menu = document.getElementById("menu");
-  const setMenu = (open) => {
-    menu.classList.toggle("open", open);
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
-  };
-  toggle.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
-  menu.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+  if (toggle && menu) {
+    const setMenu = (open) => {
+      menu.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    };
+    toggle.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
+    menu.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+  }
 
-  // Filtro de recetas
-  const chips = document.querySelectorAll(".chip");
-  const list = document.getElementById("recipes");
-  const items = list.querySelectorAll(".recipe");
-  const empty = document.getElementById("empty");
-  chips.forEach((chip) => chip.addEventListener("click", () => {
-    const f = chip.dataset.filter;
-    chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
-    let shown = 0;
-    items.forEach((it) => {
-      const ok = f === "all" || it.dataset.cat.split(" ").includes(f);
-      it.hidden = !ok;
-      if (ok) {
-        shown++; it.classList.add("in");
-        it.classList.remove("is-entering");
-        void it.offsetWidth; // reinicia la animación si se pulsa otro filtro enseguida
-        it.classList.add("is-entering");
-        it.addEventListener("animationend", () => it.classList.remove("is-entering"), { once: true });
-      }
-    });
-    list.classList.toggle("is-filtered", f !== "all");
-    empty.hidden = shown > 0;
-  }));
+  // Carriles de recetas: flechas que deslizan de derecha a izquierda; sin listener de scroll
+  const calmMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".rail").forEach((rail) => {
+    const track = rail.querySelector(".rail__track");
+    const [prev, next] = rail.querySelectorAll(".rail__btn");
+    const items = track.querySelectorAll(".recipe");
+    const first = items[0];
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const max = track.scrollWidth - track.clientWidth;
+      prev.disabled = track.scrollLeft <= 1;
+      next.disabled = track.scrollLeft >= max - 1;
+    };
+    const queue = () => { if (!raf) raf = requestAnimationFrame(update); };
+    track.addEventListener("scroll", queue, { passive: true });
+    if ("ResizeObserver" in window) new ResizeObserver(queue).observe(track);
+    update();
+    [prev, next].forEach((btn) => btn.addEventListener("click", () => {
+      const dir = Number(btn.dataset.dir);
+      const step = first.getBoundingClientRect().width + 16;
+      const n = Math.max(1, Math.floor(track.clientWidth / step));
+      track.scrollBy({ left: dir * step * n, behavior: calmMotion ? "auto" : "smooth" });
+    }));
+  });
 
   // Cítricos de la portada: desplazamiento suave con el puntero (solo ratón) y pausa fuera de pantalla
   const hero = document.querySelector(".hero");
   const art = document.querySelector(".hero__art");
-  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const calm = calmMotion;
   if (hero && art && !calm) {
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(([e]) => hero.classList.toggle("is-offscreen", !e.isIntersecting)).observe(hero);
