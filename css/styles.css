@@ -232,6 +232,9 @@ a { color: inherit; }
   .hero__copy > :nth-child(3) { animation-delay: .16s; }
   .hero .photo { animation-delay: .2s; }
   @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+  /* Al filtrar, las tarjetas que se quedan entran con un fundido breve para que se note que la lista cambió */
+  .recipe.is-entering { animation: recipe-in .18s var(--ease) both; }
+  @keyframes recipe-in { from { opacity: 0; transform: translateY(6px); } }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -242,7 +245,11 @@ a { color: inherit; }
 @media (max-width: 860px) {
   .nav__links { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; gap: 0;
     background: var(--bg); border-bottom: 1px solid var(--line); padding: .5rem 1rem 1rem; }
-  .nav__links.open { display: flex; }
+  /* Menú móvil: aparece desde su botón en vez de aparecer de golpe. Cierra más rápido de lo que abre. */
+  .js .nav__links { display: flex; opacity: 0; transform: translateY(-8px); visibility: hidden; pointer-events: none;
+    transition: opacity .16s var(--ease), transform .16s var(--ease), visibility 0s linear .16s; }
+  .js .nav__links.open { opacity: 1; transform: none; visibility: visible; pointer-events: auto;
+    transition: opacity .2s var(--ease), transform .2s var(--ease), visibility 0s; }
   .nav__links a { padding: .9rem .25rem; font-size: 1.1rem; border-bottom: 1px solid var(--line); }
   .js .nav__toggle { display: inline-flex; }
   .nav__bar { gap: .75rem; }
