@@ -184,8 +184,8 @@ a { color: inherit; }
 
 /* Revelado al hacer scroll: transmite orden de lectura. Solo con JS y sin reduced-motion */
 @media (prefers-reduced-motion: no-preference) {
-  .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: var(--d, 0ms); }
-  .js .reveal.in { opacity: 1; transform: none; }
+  .js-ready .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: var(--d, 0ms); }
+  .js-ready .reveal.in { opacity: 1; transform: none; }
   .hero__copy > *, .hero .photo { animation: rise .7s var(--ease) both; }
   .hero__copy > :nth-child(2) { animation-delay: .08s; }
   .hero__copy > :nth-child(3) { animation-delay: .16s; }
@@ -202,12 +202,12 @@ a { color: inherit; }
   .nav__links { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0; flex-direction: column; gap: 0;
     background: var(--bg); border-bottom: 1px solid var(--line); padding: .5rem 1rem 1rem; }
   /* Menú móvil: aparece desde su botón en vez de aparecer de golpe. Cierra más rápido de lo que abre. */
-  .js .nav__links { display: flex; opacity: 0; transform: translateY(-8px); visibility: hidden; pointer-events: none;
+  .js-ready .nav__links { display: flex; opacity: 0; transform: translateY(-8px); visibility: hidden; pointer-events: none;
     transition: opacity .16s var(--ease), transform .16s var(--ease), visibility 0s linear .16s; }
-  .js .nav__links.open { opacity: 1; transform: none; visibility: visible; pointer-events: auto;
+  .js-ready .nav__links.open { opacity: 1; transform: none; visibility: visible; pointer-events: auto;
     transition: opacity .2s var(--ease), transform .2s var(--ease), visibility 0s; }
   .nav__links a { padding: .9rem .25rem; font-size: 1.1rem; border-bottom: 1px solid var(--line); }
-  .js .nav__toggle { display: inline-flex; }
+  .js-ready .nav__toggle { display: inline-flex; }
   .nav__bar { gap: .75rem; }
   .btn--sm { padding: .65rem 1rem; }
   .hero { min-height: 0; padding: 2rem 0 3rem; }
@@ -321,7 +321,7 @@ h1 em { text-decoration-style: wavy; }
 .rail__head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
 .rail__head h3 { font-size: var(--fs-h3); }
 .rail__ctrl { display: none; gap: .5rem; }
-.js .rail__ctrl { display: flex; }
+.js-ready .rail__ctrl { display: flex; }
 .rail__btn { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid var(--control);
   background: var(--surface); color: var(--ink); font-size: 1.2rem; cursor: pointer;
   transition: transform .18s var(--ease), background-color .18s var(--ease), opacity .18s var(--ease); }
