@@ -8,7 +8,7 @@
   <meta name="color-scheme" content="light dark">
   <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/styles.css?v=202610121558">
+  <link rel="stylesheet" href="../css/styles.css?v=202610121715">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="page-recipe">
@@ -43,7 +43,7 @@
         </ul>
       </header>
       <div class="rp__grid">
-        <figure class="photo photo--recipe rp__photo" data-file="receta-5.jpg"><img src="../img/receta-5.jpg" alt="Galletas de cuadrícula" width="1200" height="900" fetchpriority="high"></figure>
+        <figure class="photo photo--recipe rp__photo" style="view-transition-name: foto-galletas-de-cuadricula" data-file="receta-5.jpg"><img src="../img/receta-5.jpg" alt="Galletas de cuadrícula" width="1200" height="900" fetchpriority="high"></figure>
         <section class="rp__ing" aria-labelledby="ing">
           <h2 id="ing">Ingredientes</h2>
         <h3>Masa</h3>
@@ -63,13 +63,14 @@
         </section>
         <section class="rp__steps" aria-labelledby="pasos">
           <h2 id="pasos">Paso a paso</h2>
+          <p class="rp__hint">Toca cada paso para marcarlo mientras cocinas.</p>
           <ol>
-          <li>Precalienta el horno a 180 °C.</li>
-          <li>Mezcla el aceite, el sirope, la bebida vegetal y la vainilla.</li>
-          <li>Añade la harina, la levadura y la sal y amasa lo justo hasta que quede una masa suave.</li>
-          <li>Estírala entre dos hojas de papel de horno, a unos 5 mm de grosor, y corta círculos de unos 6 cm. Colócalos en una bandeja con papel de horno.</li>
-          <li>Hornea 12 minutos, hasta que estén ligeramente doradas. Déjalas enfriar sobre una rejilla.</li>
-          <li>Funde el chocolate al baño maría o en el microondas, en tandas de 20 segundos. Con una cucharilla o un cono de papel, dibuja líneas cruzadas sobre cada galleta para formar la cuadrícula y deja que se endurezca 10 minutos.</li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Precalienta el horno a 180 °C.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Mezcla el aceite, el sirope, la bebida vegetal y la vainilla.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Añade la harina, la levadura y la sal y amasa lo justo hasta que quede una masa suave.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Estírala entre dos hojas de papel de horno, a unos 5 mm de grosor, y corta círculos de unos 6 cm. Colócalos en una bandeja con papel de horno.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Hornea 12 minutos, hasta que estén ligeramente doradas. Déjalas enfriar sobre una rejilla.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Funde el chocolate al baño maría o en el microondas, en tandas de 20 segundos. Con una cucharilla o un cono de papel, dibuja líneas cruzadas sobre cada galleta para formar la cuadrícula y deja que se endurezca 10 minutos.</span></label></li>
           </ol>
           <p class="rp__tip"><strong>Truco:</strong> Si la masa se pega al estirarla, déjala 10 minutos en la nevera.</p>
         </section>
@@ -86,6 +87,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=202610121558" defer></script>
+  <script src="../js/main.js?v=202610121715" defer></script>
 </body>
 </html>

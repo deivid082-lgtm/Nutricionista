@@ -8,7 +8,7 @@
   <meta name="color-scheme" content="light dark">
   <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/styles.css?v=202610121558">
+  <link rel="stylesheet" href="../css/styles.css?v=202610121715">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="page-recipe">
@@ -43,7 +43,7 @@
         </ul>
       </header>
       <div class="rp__grid">
-        <figure class="photo photo--recipe rp__photo" data-file="receta-4.jpg"><img src="../img/receta-4.jpg" alt="Tostada de ricotta y fresas" width="1200" height="900" fetchpriority="high"></figure>
+        <figure class="photo photo--recipe rp__photo" style="view-transition-name: foto-tostada-de-ricotta-y-fresas" data-file="receta-4.jpg"><img src="../img/receta-4.jpg" alt="Tostada de ricotta y fresas" width="1200" height="900" fetchpriority="high"></figure>
         <section class="rp__ing" aria-labelledby="ing">
           <h2 id="ing">Ingredientes</h2>
         <ul>
@@ -56,11 +56,12 @@
         </section>
         <section class="rp__steps" aria-labelledby="pasos">
           <h2 id="pasos">Paso a paso</h2>
+          <p class="rp__hint">Toca cada paso para marcarlo mientras cocinas.</p>
           <ol>
-          <li>Tuesta el pan hasta que quede crujiente.</li>
-          <li>Lava las fresas, quítales el rabito y córtalas en láminas.</li>
-          <li>Unta la ricotta sobre las tostadas y reparte las fresas por encima.</li>
-          <li>Termina con un hilo de miel y unas hojas de menta.</li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Tuesta el pan hasta que quede crujiente.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Lava las fresas, quítales el rabito y córtalas en láminas.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Unta la ricotta sobre las tostadas y reparte las fresas por encima.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Termina con un hilo de miel y unas hojas de menta.</span></label></li>
           </ol>
           <p class="rp__tip"><strong>Truco:</strong> Prueba con una pizca de pimienta negra molida: realza el dulzor de la fresa.</p>
         </section>
@@ -77,6 +78,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=202610121558" defer></script>
+  <script src="../js/main.js?v=202610121715" defer></script>
 </body>
 </html>

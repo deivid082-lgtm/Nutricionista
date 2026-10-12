@@ -8,7 +8,7 @@
   <meta name="color-scheme" content="light dark">
   <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/styles.css?v=202610121558">
+  <link rel="stylesheet" href="../css/styles.css?v=202610121715">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="page-recipe">
@@ -43,7 +43,7 @@
         </ul>
       </header>
       <div class="rp__grid">
-        <figure class="photo photo--recipe rp__photo" data-file="receta-2.jpg"><img src="../img/receta-2.jpg" alt="Compota de manzana" width="1200" height="900" fetchpriority="high"></figure>
+        <figure class="photo photo--recipe rp__photo" style="view-transition-name: foto-compota-de-manzana" data-file="receta-2.jpg"><img src="../img/receta-2.jpg" alt="Compota de manzana" width="1200" height="900" fetchpriority="high"></figure>
         <section class="rp__ing" aria-labelledby="ing">
           <h2 id="ing">Ingredientes</h2>
         <ul>
@@ -56,11 +56,12 @@
         </section>
         <section class="rp__steps" aria-labelledby="pasos">
           <h2 id="pasos">Paso a paso</h2>
+          <p class="rp__hint">Toca cada paso para marcarlo mientras cocinas.</p>
           <ol>
-          <li>Pela las manzanas, quita el corazón y córtalas en dados pequeños.</li>
-          <li>Ponlas en un cazo con el agua, el zumo de limón y la canela. Tapa y cuece a fuego medio-bajo de 10 a 12 minutos, removiendo de vez en cuando, hasta que estén blandas.</li>
-          <li>Aplasta con un tenedor si te gusta con trocitos, o tritura si la prefieres lisa. Añade la vainilla si la usas.</li>
-          <li>Sírvela tibia o fría, sola o con yogur y copos de avena.</li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Pela las manzanas, quita el corazón y córtalas en dados pequeños.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Ponlas en un cazo con el agua, el zumo de limón y la canela. Tapa y cuece a fuego medio-bajo de 10 a 12 minutos, removiendo de vez en cuando, hasta que estén blandas.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Aplasta con un tenedor si te gusta con trocitos, o tritura si la prefieres lisa. Añade la vainilla si la usas.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Sírvela tibia o fría, sola o con yogur y copos de avena.</span></label></li>
           </ol>
           <p class="rp__tip"><strong>Truco:</strong> Con manzanas bien maduras no hace falta endulzarla.</p>
         </section>
@@ -77,6 +78,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=202610121558" defer></script>
+  <script src="../js/main.js?v=202610121715" defer></script>
 </body>
 </html>

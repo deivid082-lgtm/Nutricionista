@@ -8,7 +8,7 @@
   <meta name="color-scheme" content="light dark">
   <link rel="preload" href="../fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/styles.css?v=202610121558">
+  <link rel="stylesheet" href="../css/styles.css?v=202610121715">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="page-recipe">
@@ -43,7 +43,7 @@
         </ul>
       </header>
       <div class="rp__grid">
-        <figure class="photo photo--recipe rp__photo" data-file="receta-1.jpg"><img src="../img/receta-1.jpg" alt="Mini tartitas de chocolate" width="1200" height="900" fetchpriority="high"></figure>
+        <figure class="photo photo--recipe rp__photo" style="view-transition-name: foto-mini-tartitas-de-chocolate" data-file="receta-1.jpg"><img src="../img/receta-1.jpg" alt="Mini tartitas de chocolate" width="1200" height="900" fetchpriority="high"></figure>
         <section class="rp__ing" aria-labelledby="ing">
           <h2 id="ing">Ingredientes</h2>
         <h3>Base</h3>
@@ -66,12 +66,13 @@
         </section>
         <section class="rp__steps" aria-labelledby="pasos">
           <h2 id="pasos">Paso a paso</h2>
+          <p class="rp__hint">Toca cada paso para marcarlo mientras cocinas.</p>
           <ol>
-          <li>Tritura la avena hasta dejarla como una harina gruesa. Añade los dátiles, el aceite y la sal y vuelve a triturar hasta que, al apretar un poco de masa entre los dedos, se mantenga unida.</li>
-          <li>Reparte la masa en 8 moldes pequeños (mejor de silicona) y presiónala por el fondo y las paredes con los dedos. Guárdalos 10 minutos en el congelador.</li>
-          <li>Calienta la bebida vegetal sin que llegue a hervir. Retírala del fuego, añade el chocolate troceado y la vainilla y remueve hasta obtener una crema lisa.</li>
-          <li>Rellena las bases con la crema y decora con las frambuesas o las avellanas.</li>
-          <li>Déjalas reposar 30 minutos en la nevera antes de desmoldar y servir.</li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Tritura la avena hasta dejarla como una harina gruesa. Añade los dátiles, el aceite y la sal y vuelve a triturar hasta que, al apretar un poco de masa entre los dedos, se mantenga unida.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Reparte la masa en 8 moldes pequeños (mejor de silicona) y presiónala por el fondo y las paredes con los dedos. Guárdalos 10 minutos en el congelador.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Calienta la bebida vegetal sin que llegue a hervir. Retírala del fuego, añade el chocolate troceado y la vainilla y remueve hasta obtener una crema lisa.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Rellena las bases con la crema y decora con las frambuesas o las avellanas.</span></label></li>
+          <li><label class="step"><input class="step__box" type="checkbox"><span class="step__dot" aria-hidden="true"></span><span class="step__text">Déjalas reposar 30 minutos en la nevera antes de desmoldar y servir.</span></label></li>
           </ol>
           <p class="rp__tip"><strong>Truco:</strong> Aguantan hasta 3 días en la nevera, en un recipiente cerrado.</p>
         </section>
@@ -88,6 +89,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=202610121558" defer></script>
+  <script src="../js/main.js?v=202610121715" defer></script>
 </body>
 </html>
