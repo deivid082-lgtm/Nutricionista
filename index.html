@@ -56,56 +56,81 @@
       <div class="wrap">
         <div class="section__head">
           <h2>Recetas que invento y pruebo yo</h2>
-          <p>Platos sencillos que nutren, con el sabor bien cuidado.</p>
+          <p>Platos sencillos que nutren, con el sabor bien cuidado. Toca una receta para ver los ingredientes y el paso a paso.</p>
         </div>
 
-        <div class="filters" role="group" aria-label="Filtrar recetas">
-          <button type="button" class="chip" data-filter="all" aria-pressed="true">Todas</button>
-          <button type="button" class="chip" data-filter="desayunos" aria-pressed="false">Desayunos</button>
-          <button type="button" class="chip" data-filter="meriendas" aria-pressed="false">Meriendas</button>
-          <button type="button" class="chip" data-filter="comidas" aria-pressed="false">Comidas</button>
-        </div>
-
-        <!-- Recetas de ejemplo (la 6 es inventada para la categoría Comidas): sustituye títulos, tiempos y enlaces por los reales -->
-        <ul class="recipes" id="recipes">
-          <li class="recipe reveal" data-cat="meriendas">
-            <a href="#consulta">
-              <figure class="photo photo--recipe" data-file="receta-1.jpg"><img src="img/receta-1.jpg" alt="Mini tartitas de chocolate" width="800" height="600" loading="lazy"></figure>
-              <div class="recipe__meta"><h3>Mini tartitas de chocolate</h3><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>20 min</span></div>
-            </a>
-          </li>
-          <li class="recipe reveal" data-cat="desayunos meriendas">
-            <a href="#consulta">
-              <figure class="photo photo--recipe" data-file="receta-2.jpg"><img src="img/receta-2.jpg" alt="Compota de manzana casera" width="800" height="600" loading="lazy"></figure>
-              <div class="recipe__meta"><h3>Compota de manzana</h3><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>15 min</span></div>
-            </a>
-          </li>
-          <li class="recipe reveal" data-cat="desayunos">
-            <a href="#consulta">
+        <!-- Recetas de ejemplo (Hamburguesas de lentejas es inventada): sustituye títulos, tiempos y pasos por los tuyos -->
+        <div class="rails">
+        <section class="rail reveal" aria-labelledby="rail-desayunos">
+          <header class="rail__head">
+            <h3 id="rail-desayunos">Desayunos</h3>
+            <div class="rail__ctrl">
+              <button type="button" class="rail__btn" data-dir="-1" aria-label="Desayunos: ver las anteriores"><i class="ico ico--arrow-left" aria-hidden="true"></i></button>
+              <button type="button" class="rail__btn" data-dir="1" aria-label="Desayunos: ver las siguientes"><i class="ico ico--arrow" aria-hidden="true"></i></button>
+            </div>
+          </header>
+          <ul class="rail__track" tabindex="0" aria-label="Recetas de desayunos">
+          <li class="recipe">
+            <a href="recetas/tortitas-de-avena-y-platano.html">
               <figure class="photo photo--recipe" data-file="receta-3.jpg"><img src="img/receta-3.jpg" alt="Tortitas de avena y plátano" width="800" height="600" loading="lazy"></figure>
-              <div class="recipe__meta"><h3>Tortitas de avena y plátano</h3><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>15 min</span></div>
+              <div class="recipe__meta"><h4>Tortitas de avena y plátano</h4><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>15 min</span></div>
             </a>
           </li>
-          <li class="recipe reveal" data-cat="desayunos">
-            <a href="#consulta">
+          <li class="recipe">
+            <a href="recetas/tostada-de-ricotta-y-fresas.html">
               <figure class="photo photo--recipe" data-file="receta-4.jpg"><img src="img/receta-4.jpg" alt="Tostada de ricotta y fresas" width="800" height="600" loading="lazy"></figure>
-              <div class="recipe__meta"><h3>Tostada de ricotta y fresas</h3><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>5 min</span></div>
+              <div class="recipe__meta"><h4>Tostada de ricotta y fresas</h4><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>5 min</span></div>
             </a>
           </li>
-          <li class="recipe reveal" data-cat="meriendas">
-            <a href="#consulta">
-              <figure class="photo photo--recipe" data-file="receta-5.jpg"><img src="img/receta-5.jpg" alt="Galletas con dibujo de cuadrícula" width="800" height="600" loading="lazy"></figure>
-              <div class="recipe__meta"><h3>Galletas de cuadrícula</h3><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>30 min</span></div>
+          <li class="recipe">
+            <a href="recetas/compota-de-manzana.html">
+              <figure class="photo photo--recipe" data-file="receta-2.jpg"><img src="img/receta-2.jpg" alt="Compota de manzana" width="800" height="600" loading="lazy"></figure>
+              <div class="recipe__meta"><h4>Compota de manzana</h4><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>15 min</span></div>
             </a>
           </li>
-          <li class="recipe reveal" data-cat="comidas">
-            <a href="#consulta">
+          </ul>
+        </section>
+        <section class="rail reveal" aria-labelledby="rail-comidas">
+          <header class="rail__head">
+            <h3 id="rail-comidas">Comidas</h3>
+            <div class="rail__ctrl">
+              <button type="button" class="rail__btn" data-dir="-1" aria-label="Comidas: ver las anteriores"><i class="ico ico--arrow-left" aria-hidden="true"></i></button>
+              <button type="button" class="rail__btn" data-dir="1" aria-label="Comidas: ver las siguientes"><i class="ico ico--arrow" aria-hidden="true"></i></button>
+            </div>
+          </header>
+          <ul class="rail__track" tabindex="0" aria-label="Recetas de comidas">
+          <li class="recipe">
+            <a href="recetas/hamburguesas-de-lentejas.html">
               <figure class="photo photo--recipe" data-file="receta-6.jpg"><img src="img/receta-6.jpg" alt="Hamburguesas de lentejas" width="800" height="600" loading="lazy"></figure>
-              <div class="recipe__meta"><h3>Hamburguesas de lentejas</h3><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>30 min</span></div>
+              <div class="recipe__meta"><h4>Hamburguesas de lentejas</h4><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>30 min</span></div>
             </a>
           </li>
-        </ul>
-        <p class="empty" id="empty" hidden>Aún no hay recetas en esta categoría. Pronto subo más, mientras tanto mira todas.</p>
+          </ul>
+        </section>
+        <section class="rail reveal" aria-labelledby="rail-meriendas">
+          <header class="rail__head">
+            <h3 id="rail-meriendas">Meriendas</h3>
+            <div class="rail__ctrl">
+              <button type="button" class="rail__btn" data-dir="-1" aria-label="Meriendas: ver las anteriores"><i class="ico ico--arrow-left" aria-hidden="true"></i></button>
+              <button type="button" class="rail__btn" data-dir="1" aria-label="Meriendas: ver las siguientes"><i class="ico ico--arrow" aria-hidden="true"></i></button>
+            </div>
+          </header>
+          <ul class="rail__track" tabindex="0" aria-label="Recetas de meriendas">
+          <li class="recipe">
+            <a href="recetas/mini-tartitas-de-chocolate.html">
+              <figure class="photo photo--recipe" data-file="receta-1.jpg"><img src="img/receta-1.jpg" alt="Mini tartitas de chocolate" width="800" height="600" loading="lazy"></figure>
+              <div class="recipe__meta"><h4>Mini tartitas de chocolate</h4><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>20 min</span></div>
+            </a>
+          </li>
+          <li class="recipe">
+            <a href="recetas/galletas-de-cuadricula.html">
+              <figure class="photo photo--recipe" data-file="receta-5.jpg"><img src="img/receta-5.jpg" alt="Galletas de cuadrícula" width="800" height="600" loading="lazy"></figure>
+              <div class="recipe__meta"><h4>Galletas de cuadrícula</h4><span class="time"><i class="ico ico--clock" aria-hidden="true"></i>30 min</span></div>
+            </a>
+          </li>
+          </ul>
+        </section>
+        </div>
       </div>
     </section>
 

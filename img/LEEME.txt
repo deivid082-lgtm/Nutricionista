@@ -1,7 +1,7 @@
 Fotos que necesita la web (JPG, menos de 300 KB cada una). Mientras no existan,
 la web muestra un recuadro con el nombre del archivo.
 
-hero.jpg       Portada: un plato tuyo, vertical 4:5
+hero.jpg       Portada: plato saludable en tonos verde y naranja, vertical 4:5 (la imagen ya generada en Canva no se pudo descargar desde el entorno)
 miriam.jpg     Seccion "Sobre mi": tu foto, vertical 4:5
 receta-1.jpg   Mini tartitas de chocolate (horizontal 4:3)
 receta-2.jpg   Compota de manzana (4:3)
