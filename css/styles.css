@@ -2,18 +2,6 @@
    Sistema de formas (bloqueado): botones y chips en píldora, fotos y bloques 20px, controles pequeños 12px.
    Un solo acento (coral). Neutros verdosos fríos. Claro y oscuro con prefers-color-scheme. */
 
-@font-face {
-  font-family: "Outfit";
-  src: url("../fonts/outfit-latin-wght-normal.woff2") format("woff2");
-  font-weight: 100 900;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Figtree";
-  src: url("../fonts/figtree-latin-wght-normal.woff2") format("woff2");
-  font-weight: 300 900;
-  font-display: swap;
-}
 
 :root {
   --bg: #f4f6f2;
@@ -41,8 +29,8 @@
   --fs-body: 1.0625rem;
   --fs-small: 1rem;
 
-  --font-display: "Outfit", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "DM Sans", "Segoe UI", system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -270,3 +258,60 @@ a { color: inherit; }
   .btn--sm { font-size: .9rem; padding: .6rem .85rem; }
 }
 .section--tint .photo { background: var(--bg); }
+
+/* Tema "Huerto": verde bosque profundo con mandarina. Bricolage Grotesque + DM Sans. */
+@font-face { font-family: "Bricolage Grotesque"; src: url("../fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("../fonts/dm-sans-latin-wght-normal.woff2") format("woff2"); font-weight: 100 1000; font-display: swap; }
+
+:root {
+  --bg: #f1f5ee;
+  --surface: #fafcf8;
+  --tint: #dde8d9;
+  --ink: #14281f;
+  --muted: #455a4d;
+  --line: #cfdccb;
+  --control: #6f8577;
+  --accent: #b14e0c;
+  --accent-text: #a54709;
+  --on-accent: #ffffff;
+
+  --hero-bg: #1c3a2e;
+  --hero-ink: #f1f5ee;
+  --hero-muted: #c3d3c8;
+  --hero-accent: #ff9a52;
+  --hero-on-accent: #14281f;
+  --hero-control: #86a393;
+  --hero-tint: #274a3a;
+
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "DM Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1a14; --surface: #15241c; --tint: #162a20; --ink: #eaf1ea; --muted: #a9bcaf;
+    --line: #26392e; --control: #738b7c; --accent: #ff9a52; --accent-text: #ffa968; --on-accent: #14281f;
+    --hero-bg: #1c3a2e; --hero-tint: #274a3a;
+  }
+}
+h1, h2, h3 { letter-spacing: -.03em; }
+h1 { font-weight: 700; }
+h1 em { text-decoration-style: wavy; }
+
+/* Zonas de contraste fuerte: portada y bloque final usan la paleta oscura de la versión */
+.hero, .cta {
+  --ink: var(--hero-ink); --muted: var(--hero-muted);
+  --accent: var(--hero-accent); --accent-text: var(--hero-accent); --on-accent: var(--hero-on-accent);
+  --control: var(--hero-control); --tint: var(--hero-tint);
+  background: var(--hero-bg); color: var(--hero-ink);
+}
+.cta .btn--on-accent { background: var(--hero-accent); border-color: var(--hero-accent); color: var(--hero-on-accent); }
+.cta .btn--outline-on-accent { color: var(--hero-ink); border-color: var(--hero-ink); }
+.cta :focus-visible, .hero :focus-visible { outline-color: var(--hero-accent); }
+
+
+/* Móvil estrecho: las tipografías nuevas son más anchas, la barra no puede desbordar */
+@media (max-width: 420px) {
+  .nav__bar { gap: .5rem; }
+  .brand { font-size: .9rem; }
+  .btn--sm { font-size: .85rem; padding: .55rem .65rem; }
+}
