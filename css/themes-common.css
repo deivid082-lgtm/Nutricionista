@@ -1,0 +1,24 @@
+/* Zonas de contraste fuerte: portada y bloque final usan la paleta oscura de la versión */
+.hero, .cta {
+  --ink: var(--hero-ink); --muted: var(--hero-muted);
+  --accent: var(--hero-accent); --accent-text: var(--hero-accent); --on-accent: var(--hero-on-accent);
+  --control: var(--hero-control); --tint: var(--hero-tint);
+  background: var(--hero-bg); color: var(--hero-ink);
+}
+.cta .btn--on-accent { background: var(--hero-accent); border-color: var(--hero-accent); color: var(--hero-on-accent); }
+.cta .btn--outline-on-accent { color: var(--hero-ink); border-color: var(--hero-ink); }
+.cta :focus-visible, .hero :focus-visible { outline-color: var(--hero-accent); }
+
+/* Selector de versiones (solo para comparar en el móvil) */
+.vswitch { position: fixed; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 60;
+  display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--ink); box-shadow: 0 6px 24px rgb(0 0 0 / .3); }
+.vswitch a { display: inline-flex; align-items: center; justify-content: center; min-width: 64px; min-height: 44px; padding: 0 14px; border-radius: 999px;
+  color: var(--bg); font: 600 .95rem/1 var(--font-body); text-decoration: none; }
+.vswitch a[aria-current="page"] { background: var(--bg); color: var(--ink); }
+
+/* Móvil estrecho: las tipografías nuevas son más anchas, la barra no puede desbordar */
+@media (max-width: 420px) {
+  .nav__bar { gap: .5rem; }
+  .brand { font-size: 1rem; }
+  .btn--sm { font-size: .85rem; padding: .55rem .75rem; }
+}
