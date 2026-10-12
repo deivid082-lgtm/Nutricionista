@@ -16,11 +16,11 @@ Adults who want to eat better without stress. They arrive looking for simple, ac
 
 ## Product Purpose
 
-Personal-brand website of Miriam, a dietitian-nutritionist (Instagram: @nutricionista_en_crisis). It promotes healthy eating, shares simple and accessible recipes, and converts visitors into consultation bookings. Success is people cooking the recipes and booking a consultation.
+Personal-brand website of Miriam, technician in Dietetics and diploma holder in Nutrition and Dietetics from the Universidad de Barcelona (Instagram: @nutricionista_en_crisis). It promotes healthy eating, shares simple and accessible recipes, and converts visitors into consultation bookings. Success is people cooking the recipes and booking a consultation.
 
 ## Positioning
 
-Dietitian-nutritionist voice with "humor nutricional": credible professional advice delivered without guilt or drama. Background in collective catering (restauración colectiva) and pediatric nutrition, and recipes developed in a small camper kitchen while travelling.
+"Humor nutricional" voice backed by 20+ years in the collective-catering unit of a reference maternal and child hospital, where she writes menus considering pathologies and current nutrition guidelines. Passionate cook who invents her own recipes, now specializing in vegan food. Healthy food that nourishes and tastes good.
 
 ## Operating Context
 
@@ -30,7 +30,8 @@ Visitors mostly come from Instagram on a phone. Recipes are quick, low-ingredien
 
 - Recipe browsing with filters (breakfasts, snacks, for kids).
 - Booking a consultation: individual consultation and online consultation. Booking is currently by email (`hola@tudominio.com` is a placeholder to be replaced); no backend or form handling exists.
-- Open decisions: real contact email, real recipe pages and links, whether pediatric nutrition and collective-catering advisory stay prominent (the confirmed primary audience is adults).
+- Open decisions: real contact email and real recipe pages and links. The pediatric section was removed by the user.
+- Recipe categories: Desayunos, Meriendas, Comidas. The "Hamburguesas de lentejas" recipe is an invented example.
 - No services beyond individual and online consultation are confirmed. Collective-catering advisory is not offered through the site for now.
 
 ## Brand Commitments
@@ -41,7 +42,7 @@ Brand name: "Nutricionista en crisis". Tone: friendly, direct, with humor, no pr
 
 - Her own photos and recipes (from Instagram), to be supplied; the site currently shows placeholders (`img/LEEME.txt` lists the nine needed).
 - Recipe titles on the site are examples taken from her profile highlights and must be replaced by real ones.
-- Not available, and must not be invented: client testimonials, price list, professional credentials or registration number.
+- Credentials provided by the user (used verbatim in "Sobre mí"). Not available, and must not be invented: client testimonials, price list, registration number.
 
 ## Product Principles
 
