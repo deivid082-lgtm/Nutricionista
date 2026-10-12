@@ -1,0 +1,38 @@
+/* Versión B: "Ciruela y pistacho". Ciruela profunda con pistacho. Young Serif + Nunito Sans.
+   Serif justificada: recetario de cocina con calidez de libro de recetas. */
+@font-face { font-family: "Young Serif"; src: url("../fonts/young-serif-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Nunito Sans"; src: url("../fonts/nunito-sans-latin-wght-normal.woff2") format("woff2"); font-weight: 200 1000; font-display: swap; }
+
+:root {
+  --bg: #f5f2f6;
+  --surface: #fbf9fb;
+  --tint: #e9e1ec;
+  --ink: #2b1b33;
+  --muted: #5a4a63;
+  --line: #dcd1e0;
+  --control: #85768e;
+  --accent: #3f6b1f;
+  --accent-text: #3a6320;
+  --on-accent: #ffffff;
+
+  --hero-bg: #3a2342;
+  --hero-ink: #f5f2f6;
+  --hero-muted: #d6c9dc;
+  --hero-accent: #c9e08a;
+  --hero-on-accent: #2b1b33;
+  --hero-control: #9c8aa6;
+  --hero-tint: #4a3055;
+
+  --font-display: "Young Serif", "Iowan Old Style", Georgia, serif;
+  --font-body: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #170f1c; --surface: #20152a; --tint: #231730; --ink: #f2edf4; --muted: #b9aac2;
+    --line: #34253f; --control: #8a7a93; --accent: #c9e08a; --accent-text: #d3e89a; --on-accent: #2b1b33;
+    --hero-bg: #3a2342; --hero-tint: #4a3055;
+  }
+}
+h1, h2, h3, .brand, .recipe h3 { font-weight: 400; letter-spacing: -.01em; }
+.hero h1 em { text-decoration-style: wavy; }
+
