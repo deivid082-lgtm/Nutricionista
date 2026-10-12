@@ -1,12 +1,11 @@
-Fotos que necesita la web (JPG, mejor en formato horizontal u 4:5, menos de 300 KB cada una).
-Mientras no existan, la web muestra un recuadro con el nombre del archivo.
+Fotos que necesita la web (JPG, menos de 300 KB cada una). Mientras no existan,
+la web muestra un recuadro con el nombre del archivo.
 
-hero.jpg          Foto principal de la portada (un plato tuyo, vertical 4:5)
-pediatria.jpg     Alimentacion infantil (vertical 4:5)
-miriam.jpg        Tu foto para "Sobre mi" (vertical 4:5)
-receta-1.jpg      Mini tartitas de chocolate (cuadrada)
-receta-2.jpg      Compota de manzana (cuadrada)
-receta-3.jpg      Tortitas de avena y platano (cuadrada)
-receta-4.jpg      Bizcocho de yogur (cuadrada)
-receta-5.jpg      Tostada de ricotta y fresas (cuadrada)
-receta-6.jpg      Galletas de cuadricula (cuadrada)
+hero.jpg       Portada: un plato tuyo, vertical 4:5
+miriam.jpg     Seccion "Sobre mi": tu foto, vertical 4:5
+receta-1.jpg   Mini tartitas de chocolate (horizontal 4:3)
+receta-2.jpg   Compota de manzana (4:3)
+receta-3.jpg   Tortitas de avena y platano (4:3)
+receta-4.jpg   Tostada de ricotta y fresas (4:3)
+receta-5.jpg   Galletas de cuadricula (4:3)
+receta-6.jpg   Comida (receta de ejemplo: Hamburguesas de lentejas, 4:3)
