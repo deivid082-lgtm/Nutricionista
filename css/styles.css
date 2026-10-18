@@ -29,8 +29,8 @@
   --fs-body: 1.0625rem;
   --fs-small: 1rem;
 
-  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --font-body: "DM Sans", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Urbanist", system-ui, sans-serif;
+  --font-body: "Urbanist", system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -223,9 +223,7 @@ a { color: inherit; }
 }
 .section--tint .photo { background: var(--bg); }
 
-/* Tema "Huerto": verde bosque profundo con mandarina. Bricolage Grotesque + DM Sans. */
-@font-face { font-family: "Bricolage Grotesque"; src: url("../fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
-@font-face { font-family: "DM Sans"; src: url("../fonts/dm-sans-latin-wght-normal.woff2") format("woff2"); font-weight: 100 1000; font-display: swap; }
+/* Tokens de color base (el tema Noche, al final del archivo, los sustituye) */
 
 :root {
   --bg: #f1f5ee;
@@ -247,8 +245,8 @@ a { color: inherit; }
   --hero-control: #86a393;
   --hero-tint: #274a3a;
 
-  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --font-body: "DM Sans", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Urbanist", system-ui, sans-serif;
+  --font-body: "Urbanist", system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -397,3 +395,57 @@ h1 em { text-decoration-style: wavy; }
   .brand span.is-shaking { animation: crisis .5s cubic-bezier(0.77, 0, 0.175, 1) both; }
   @keyframes crisis { 0%, 100% { translate: 0 0; } 15% { translate: -2px 0; } 30% { translate: 2px 0; } 45% { translate: -1.5px 0; } 60% { translate: 1.5px 0; } 80% { translate: -.5px 0; } }
 }
+
+/* Brote que crece junto a la especialización en alimentación vegana.
+   Se ve una vez, al entrar en pantalla (rara vez, detalle de gracia). Solo transform y opacity. */
+.vegan { display: flex; align-items: center; gap: .85rem; margin-top: 1.25rem; padding: .9rem 1.15rem; max-width: 60ch;
+  border-radius: var(--r-ctl); background: var(--surface); border: 1px solid var(--line); color: var(--ink); }
+.vegan strong { color: var(--ink); }
+.sprout { --leaf: #4e8a3c; position: relative; flex: none; width: 30px; height: 36px; }
+@media (prefers-color-scheme: dark) { .sprout { --leaf: #8fc46c; } }
+.sprout__stem { position: absolute; left: 14px; bottom: 0; width: 2.5px; height: 22px; border-radius: 2px; background: var(--leaf); transform-origin: 50% 100%; }
+.sprout__leaf { position: absolute; bottom: 19px; width: 13px; height: 17px; background: var(--leaf); }
+.sprout__leaf--l { right: 15.2px; border-radius: 0 100% 0 100%; transform-origin: 100% 100%; transform: rotate(-22deg); }
+.sprout__leaf--r { left: 15.2px; border-radius: 100% 0 100% 0; transform-origin: 0 100%; transform: rotate(22deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .js-ready .vegan:not(.in) .sprout__stem { transform: scaleY(.15); }
+  .js-ready .vegan:not(.in) .sprout__leaf--l { transform: rotate(45deg) scale(.4); opacity: 0; }
+  .js-ready .vegan:not(.in) .sprout__leaf--r { transform: rotate(-45deg) scale(.4); opacity: 0; }
+  .vegan.in .sprout__stem { transition: transform .5s cubic-bezier(0.23, 1, 0.32, 1) .3s; }
+  .vegan.in .sprout__leaf--l { transition: transform .55s cubic-bezier(0.23, 1, 0.32, 1) .65s, opacity .3s cubic-bezier(0.23, 1, 0.32, 1) .65s; }
+  .vegan.in .sprout__leaf--r { transition: transform .55s cubic-bezier(0.23, 1, 0.32, 1) .77s, opacity .3s cubic-bezier(0.23, 1, 0.32, 1) .77s; }
+}
+
+/* Tema "Noche" (versión 3 elegida): oscura y fotográfica. La portada es la foto a sangre con un velo, Urbanist muy fina en blanco
+   y los términos clave en mandarina. Un solo aspecto deliberado (oscuro). */
+@font-face { font-family: "Urbanist"; src: url("../fonts/urbanist-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+:root {
+  color-scheme: dark;
+  --bg: #0e1612; --surface: #15201a; --tint: #131d18; --ink: #eef3ee; --muted: #a9b8ae; --line: #25332b; --control: #6f8478;
+  --accent: #ff9a52; --accent-text: #ffa96b; --on-accent: #13201a;
+  --hero-bg: #1a3428; --hero-ink: #f5f8f4; --hero-muted: #d3ddd6; --hero-accent: #ff9a52; --hero-on-accent: #13201a; --hero-control: #8aa597; --hero-tint: #22402f;
+  --font-display: "Urbanist", system-ui, sans-serif; --font-body: "Urbanist", system-ui, sans-serif;
+  --r-card: 14px; --r-ctl: 10px;
+}
+body { letter-spacing: .01em; }
+h1, h2, h3 { font-weight: 200; letter-spacing: -.02em; line-height: 1.06; }
+.hero { background: linear-gradient(90deg, rgb(9 16 12 / .94) 0%, rgb(9 16 12 / .78) 42%, rgb(9 16 12 / .2) 100%), url("../img/hero.jpg") 70% 50% / cover no-repeat; }
+.hero__art { display: none; }
+.hero__grid { grid-template-columns: minmax(0, 42rem); }
+.hero h1 { font-size: clamp(3rem, 7vw, 5.75rem); font-weight: 200; }
+.hero h1 em { font-weight: 600; text-decoration: none; }
+.hl { font-weight: 600; color: var(--accent-text); }
+h2 .hl { font-weight: 500; }
+.hero .hl { color: var(--hero-accent); }
+.section--tint { background: var(--tint); }
+.cta { border: 1px solid var(--line); }
+@media (max-width: 860px) {
+  .hero { min-height: calc(100dvh - var(--nav-h)); align-items: flex-end;
+    background: linear-gradient(180deg, rgb(9 16 12 / .5) 0%, rgb(9 16 12 / .86) 45%, rgb(9 16 12 / .96) 100%), url("../img/hero.jpg") 50% 30% / cover no-repeat; }
+}
+/* Brote vegano: verde claro siempre, porque esta versión es oscura */
+.sprout { --leaf: #8fc46c; }
+.vegan strong.hl { color: var(--accent-text); }
+
+/* Páginas de receta en el tema Noche */
+.rp__head h1 { font-weight: 200; }
