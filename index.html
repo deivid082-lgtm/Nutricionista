@@ -7,7 +7,7 @@
   <meta name="description" content="Miriam, técnico en Dietética y diplomada en Nutrición y Dietética. Recetas saludables con sabor y consulta nutricional individual u online.">
   <meta name="color-scheme" content="light dark">
   <link rel="preload" href="fonts/urbanist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/styles.css?v=202610181132">
+  <link rel="stylesheet" href="css/styles.css?v=202610181139">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -21,7 +21,7 @@
         <a href="#como-trabajo">Cómo trabajo</a>
         <a href="#sobre-mi">Sobre mí</a>
       </nav>
-      <a class="btn btn--sm" href="#consulta">Reservar consulta</a>
+      <a class="btn btn--sm" href="#reservar" data-booking>Reservar consulta</a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
         <i class="ico ico--list" aria-hidden="true"></i>
       </button>
@@ -171,8 +171,7 @@
           <h2>¿Hablamos de <strong class="hl">lo que comes</strong>?</h2>
           <p>Escríbeme para reservar tu consulta individual u online.</p>
           <div class="cta__actions">
-            <!-- TODO: cambiar por tu correo real -->
-            <a class="btn btn--on-accent" href="mailto:hola@tudominio.com?subject=Reservar%20consulta">Reservar consulta <i class="ico ico--arrow" aria-hidden="true"></i></a>
+                        <a class="btn btn--on-accent" href="#reservar" data-booking>Reservar consulta <i class="ico ico--arrow" aria-hidden="true"></i></a>
             <a class="btn btn--outline-on-accent" href="https://www.instagram.com/nutricionista_en_crisis/" rel="noopener"><i class="ico ico--insta" aria-hidden="true"></i>@nutricionista_en_crisis</a>
           </div>
           <!-- TODO: cambiar el correo en los dos sitios (enlace de arriba y este texto) -->
@@ -184,6 +183,41 @@
     </section>
   </main>
 
+
+  <!-- Reserva: formulario guiado en 3 pasos. Formspree: sustituye TU_ID_FORMSPREE por el identificador de tu formulario (formspree.io/f/xxxx) -->
+  <dialog class="modal" id="booking" aria-labelledby="booking-title">
+    <form class="modal__form" id="booking-form" action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST" novalidate>
+      <div class="modal__head"><h2 id="booking-title">Reservar consulta</h2><button type="button" class="modal__close" data-close>Cerrar</button></div>
+      <div class="modal__body">
+        <div class="progress"><p id="booking-step-label">Paso 1 de 3</p><div class="progress__bar"><i id="booking-bar"></i></div></div>
+        <section class="fstep" data-step="1">
+          <fieldset class="field"><legend>¿Qué te gustaría trabajar?</legend><p class="help">Elige una o varias.</p><div class="choices"><label class="choice"><input type="checkbox" name="objetivos[]" value="Comer mejor en general" autofocus><span>Comer mejor en general</span></label><label class="choice"><input type="checkbox" name="objetivos[]" value="Alimentación vegana"><span>Alimentación vegana</span></label><label class="choice"><input type="checkbox" name="objetivos[]" value="Organizar menús semanales"><span>Organizar menús semanales</span></label><label class="choice"><input type="checkbox" name="objetivos[]" value="Una patología o intolerancia"><span>Una patología o intolerancia</span></label><label class="choice"><input type="checkbox" name="objetivos[]" value="Otro"><span>Otro</span></label></div></fieldset>
+          <fieldset class="field"><legend>Modalidad</legend><div class="choices"><label class="choice"><input type="radio" name="modalidad" value="Individual" checked><span>Individual</span></label><label class="choice"><input type="radio" name="modalidad" value="Online"><span>Online</span></label></div></fieldset>
+        </section>
+        <section class="fstep" data-step="2" hidden>
+          <fieldset class="field"><legend>¿Qué días te vienen mejor?</legend><div class="choices"><label class="choice"><input type="checkbox" name="dias[]" value="Lunes"><span>Lunes</span></label><label class="choice"><input type="checkbox" name="dias[]" value="Martes"><span>Martes</span></label><label class="choice"><input type="checkbox" name="dias[]" value="Miércoles"><span>Miércoles</span></label><label class="choice"><input type="checkbox" name="dias[]" value="Jueves"><span>Jueves</span></label><label class="choice"><input type="checkbox" name="dias[]" value="Viernes"><span>Viernes</span></label></div></fieldset>
+          <fieldset class="field"><legend>¿En qué franja?</legend><div class="choices"><label class="choice"><input type="radio" name="franja" value="Mañana"><span>Mañana</span></label><label class="choice"><input type="radio" name="franja" value="Tarde"><span>Tarde</span></label></div></fieldset>
+          <fieldset class="field"><legend>¿Cómo prefieres que te contacte?</legend><div class="choices"><label class="choice"><input type="radio" name="contacto" value="Email"><span>Email</span></label><label class="choice"><input type="radio" name="contacto" value="Teléfono"><span>Teléfono</span></label><label class="choice"><input type="radio" name="contacto" value="WhatsApp"><span>WhatsApp</span></label></div></fieldset>
+        </section>
+        <section class="fstep" data-step="3" hidden>
+          <div class="field"><label for="b-name">Nombre</label><input id="b-name" name="nombre" type="text" autocomplete="name" required><p class="err" id="b-name-err" hidden>Escribe tu nombre.</p></div>
+          <div class="field"><label for="b-email">Email</label><input id="b-email" name="email" type="email" autocomplete="email" required><p class="err" id="b-email-err" hidden>Escribe un email válido, por ejemplo nombre@correo.com.</p></div>
+          <div class="field"><label for="b-tel">Teléfono <span class="opt">(opcional)</span></label><input id="b-tel" name="telefono" type="tel" autocomplete="tel"></div>
+          <label class="check"><input type="checkbox" name="privacidad" value="aceptada" required><span>He leído y acepto la política de privacidad. Mis datos solo se usan para responder a mi solicitud.</span></label>
+          <p class="err" id="b-priv-err" hidden>Necesito que aceptes la política de privacidad para poder responderte.</p>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Nueva solicitud de consulta desde la web">
+        </section>
+        <div class="fstatus" id="booking-status" role="status" aria-live="polite" hidden></div>
+      </div>
+      <div class="modal__foot">
+        <button type="button" class="btn btn--ghost-dark" id="booking-prev" hidden>Atrás</button><span></span>
+        <button type="button" class="btn" id="booking-next">Siguiente</button>
+        <button type="submit" class="btn" id="booking-send" hidden>Enviar solicitud</button>
+      </div>
+    </form>
+  </dialog>
+
   <footer class="footer">
     <div class="wrap footer__row">
       <p>Nutricionista en crisis</p>
@@ -191,6 +225,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=202610181132" defer></script>
+  <script src="js/main.js?v=202610181139" defer></script>
 </body>
 </html>
