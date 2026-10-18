@@ -1,0 +1,30 @@
+/* Versión 1 "Lienzo": claro, aire, Jost muy fina. Los términos clave ganan peso y un subrayado mandarina. */
+@font-face { font-family: "Jost"; src: url("../fonts/jost-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+:root {
+  --bg: #f6f8f4; --surface: #fcfdfb; --tint: #edf1ea; --ink: #15241c; --muted: #4b5a51; --line: #dce3d8; --control: #7a887f;
+  --accent: #b24e10; --accent-text: #a3460c; --on-accent: #ffffff;
+  --hero-bg: #f6f8f4; --hero-ink: #15241c; --hero-muted: #4b5a51; --hero-accent: #b24e10; --hero-on-accent: #ffffff; --hero-control: #7a887f; --hero-tint: #edf1ea;
+  --font-display: "Jost", "Avenir Next", system-ui, sans-serif; --font-body: "Jost", "Avenir Next", system-ui, sans-serif;
+  --r-card: 6px; --r-ctl: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1511; --surface: #161e19; --tint: #141c17; --ink: #eef2ec; --muted: #a8b5ac; --line: #26302a; --control: #6f7f75;
+    --accent: #ff9a52; --accent-text: #ffa968; --on-accent: #15241c;
+    --hero-bg: #0f1511; --hero-ink: #eef2ec; --hero-muted: #a8b5ac; --hero-accent: #ff9a52; --hero-on-accent: #15241c; --hero-control: #6f7f75; --hero-tint: #141c17;
+  }
+}
+body { font-weight: 400; letter-spacing: .005em; }
+h1, h2, h3 { font-weight: 200; letter-spacing: -.02em; line-height: 1.08; }
+.hero h1 { font-size: clamp(3rem, 7vw, 5.75rem); font-weight: 200; }
+.hero h1 em { font-weight: 500; text-decoration: none; }
+.hero .photo { transform: none; }
+.hl { font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: .22em; }
+h2 .hl, h1 .hl { font-weight: 500; text-decoration: none; color: var(--accent-text); }
+.btn { font-weight: 500; letter-spacing: .02em; }
+.section { padding-block: clamp(5rem, 11vw, 9rem); }
+.steps li { border-color: var(--line); }
+.cta { --ink: #f2f5f0; --muted: #c9d3cc; background: #15241c; color: #f2f5f0; }
+.cta .btn--on-accent { background: #ff9a52; border-color: #ff9a52; color: #15241c; }
+.cta .btn--outline-on-accent { color: #f2f5f0; border-color: #f2f5f0; }
+.cta :focus-visible { outline-color: #ff9a52; }
