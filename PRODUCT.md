@@ -29,8 +29,8 @@ Visitors mostly come from Instagram on a phone. Recipes are quick, low-ingredien
 ## Capabilities and Constraints
 
 - Recipe browsing with filters (breakfasts, snacks, for kids).
-- Booking a consultation: individual consultation and online consultation. Booking is currently by email (`hola@tudominio.com` is a placeholder to be replaced); no backend or form handling exists.
-- Open decisions: real contact email and real recipe pages and links. The pediatric section was removed by the user.
+- Booking a consultation: individual consultation and online consultation. Booking is a guided 3-step form in a dialog, sent through Formspree (form ID still to be configured). Contact email: miriamorantos@gmail.com.
+- Open decisions: Formspree form ID, privacy policy details (surname, NIF if needed) and real recipe content. The pediatric section was removed by the user.
 - Recipe categories: Desayunos, Meriendas, Comidas. The "Hamburguesas de lentejas" recipe is an invented example.
 - No services beyond individual and online consultation are confirmed. Collective-catering advisory is not offered through the site for now.
 
