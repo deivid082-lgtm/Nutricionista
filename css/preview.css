@@ -1,6 +1,0 @@
-/* Selector de versiones (solo para comparar) */
-.vswitch { position: fixed; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 60;
-  display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--ink); box-shadow: 0 6px 24px rgb(0 0 0 / .3); }
-.vswitch a { display: inline-flex; align-items: center; justify-content: center; min-width: 56px; min-height: 44px; padding: 0 14px; border-radius: 999px;
-  color: var(--bg); font: 600 .95rem/1 var(--font-body); text-decoration: none; }
-.vswitch a[aria-current="page"] { background: var(--bg); color: var(--ink); }

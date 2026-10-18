@@ -36,7 +36,7 @@ Visitors mostly come from Instagram on a phone. Recipes are quick, low-ingredien
 
 ## Brand Commitments
 
-Brand name: "Nutricionista en crisis". Tone: friendly, direct, with humor, no preaching. Existing identity is the Instagram profile (name, bio, food photography with warm plates). Chosen visual direction (user picked version A): deep forest green with tangerine accent, Bricolage Grotesque for headings and DM Sans for body text. Hero and final booking block use the dark green for strong contrast.
+Brand name: "Nutricionista en crisis". Tone: friendly, direct, with humor, no preaching. Existing identity is the Instagram profile (name, bio, food photography with warm plates). Chosen visual direction (user picked design 3 "Noche"): dark, photographic and minimalist. Full-bleed hero photo with a dark veil, Urbanist (thin 200 for headings, 400 for body), tangerine accent for key terms, deep green for the booking block. A sprout animation marks the vegan specialization.
 
 ## Evidence on Hand
 
