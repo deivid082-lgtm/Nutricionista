@@ -13,7 +13,7 @@
   .js-ready .vegan:not(.in) .sprout__stem { transform: scaleY(.15); }
   .js-ready .vegan:not(.in) .sprout__leaf--l { transform: rotate(45deg) scale(.4); opacity: 0; }
   .js-ready .vegan:not(.in) .sprout__leaf--r { transform: rotate(-45deg) scale(.4); opacity: 0; }
-  .sprout__stem { transition: transform .5s cubic-bezier(0.23, 1, 0.32, 1) .3s; }
-  .sprout__leaf--l { transition: transform .55s cubic-bezier(0.23, 1, 0.32, 1) .65s, opacity .3s cubic-bezier(0.23, 1, 0.32, 1) .65s; }
-  .sprout__leaf--r { transition: transform .55s cubic-bezier(0.23, 1, 0.32, 1) .77s, opacity .3s cubic-bezier(0.23, 1, 0.32, 1) .77s; }
+  .vegan.in .sprout__stem { transition: transform .5s cubic-bezier(0.23, 1, 0.32, 1) .3s; }
+  .vegan.in .sprout__leaf--l { transition: transform .55s cubic-bezier(0.23, 1, 0.32, 1) .65s, opacity .3s cubic-bezier(0.23, 1, 0.32, 1) .65s; }
+  .vegan.in .sprout__leaf--r { transition: transform .55s cubic-bezier(0.23, 1, 0.32, 1) .77s, opacity .3s cubic-bezier(0.23, 1, 0.32, 1) .77s; }
 }

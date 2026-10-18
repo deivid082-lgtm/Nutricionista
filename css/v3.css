@@ -25,3 +25,6 @@ h2 .hl { font-weight: 500; }
   .hero { min-height: calc(100dvh - var(--nav-h)); align-items: flex-end;
     background: linear-gradient(180deg, rgb(9 16 12 / .5) 0%, rgb(9 16 12 / .86) 45%, rgb(9 16 12 / .96) 100%), url("../img/hero.jpg") 50% 30% / cover no-repeat; }
 }
+/* Brote vegano: verde claro siempre, porque esta versión es oscura */
+.sprout { --leaf: #8fc46c; }
+.vegan strong.hl { color: var(--accent-text); }
