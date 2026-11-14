@@ -28,7 +28,7 @@ Visitors mostly come from Instagram on a phone. Recipes are quick, low-ingredien
 
 ## Capabilities and Constraints
 
-- Recipe browsing with filters (breakfasts, snacks, for kids).
+- Recipe browsing with category filters (Desayunos, Comidas, Meriendas).
 - Booking a consultation: individual consultation and online consultation. Booking is a guided 3-step form in a dialog, sent through Formspree (form ID still to be configured). Contact email: miriamorantos@gmail.com.
 - Open decisions: Formspree form ID, privacy policy details (surname, NIF if needed) and real recipe content. The pediatric section was removed by the user.
 - Recipe categories: Desayunos, Meriendas, Comidas. The "Hamburguesas de lentejas" recipe is an invented example.
@@ -36,7 +36,7 @@ Visitors mostly come from Instagram on a phone. Recipes are quick, low-ingredien
 
 ## Brand Commitments
 
-Brand name: "Nutricionista en crisis". Tone: friendly, direct, with humor, no preaching. Existing identity is the Instagram profile (name, bio, food photography with warm plates). Chosen visual direction (user picked design 3 "Noche"): dark, photographic and minimalist. Full-bleed hero photo with a dark veil, Urbanist (thin 200 for headings, 400 for body), tangerine accent for key terms, deep green for the booking block. A sprout animation marks the vegan specialization.
+Brand name: "Nutricionista en crisis". Tone: friendly, direct, with humor, no preaching. Existing identity is the Instagram profile (name, bio, food photography with warm plates). Chosen visual direction (user picked alternative A "Revista" over the previous dark "Noche"): light and editorial. Warm paper background, Fraunces serif for headings with italic tangerine emphasis, Urbanist for body, deep green for the booking block and full-screen menu. Motion supports reading: headline lines rise, photos open with a clip, recipe cards as a horizontal deck with category filters, method cards stack on scroll, header hides on scroll down. Recipe cards and recipe pages use category-tinted covers until real photos exist.
 
 ## Evidence on Hand
 
