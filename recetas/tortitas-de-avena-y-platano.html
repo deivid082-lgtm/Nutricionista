@@ -5,44 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Tortitas de avena y plátano | Nutricionista en crisis</title>
   <meta name="description" content="Tortitas de avena y plátano: ingredientes y paso a paso. Un desayuno de domingo que se prepara un martes. Sin huevo y con solo cuatro ingredientes de despensa.">
-  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F5F0E6">
+  <link rel="preload" href="../fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/urbanist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/styles.css?v=202610181300">
-  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="../css/styles.css?v=202611141800">
 </head>
 <body class="page-recipe">
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
-  <header class="nav">
-    <div class="wrap nav__bar">
+  <div class="scrollbar" aria-hidden="true"><i></i></div>
+
+  <header class="top">
+    <div class="wrap top__bar">
       <a class="brand" href="../index.html#inicio" aria-label="Nutricionista en crisis, inicio">Nutricionista <span>en crisis</span></a>
-      <nav class="nav__links" id="menu" aria-label="Principal">
+      <nav class="top__links" aria-label="Principal">
         <a href="../index.html#recetas">Recetas</a>
         <a href="../index.html#como-trabajo">Cómo trabajo</a>
         <a href="../index.html#sobre-mi">Sobre mí</a>
       </nav>
       <a class="btn btn--sm" href="../index.html#reservar">Reservar consulta</a>
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
-        <i class="ico ico--list" aria-hidden="true"></i>
-      </button>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><i></i><i></i></button>
     </div>
   </header>
+
+  <div class="menu" id="menu" inert>
+    <nav class="menu__links" aria-label="Menú">
+      <a href="../index.html#recetas"><small>01</small>Recetas</a>
+      <a href="../index.html#como-trabajo"><small>02</small>Cómo trabajo</a>
+      <a href="../index.html#sobre-mi"><small>03</small>Sobre mí</a>
+      <a href="../index.html#reservar"><small>04</small>Reservar consulta</a>
+    </nav>
+    <a class="menu__ig" href="https://www.instagram.com/nutricionista_en_crisis/" target="_blank" rel="noopener noreferrer"><img src="../icons/instagram-color.svg" alt="" width="24" height="24">@nutricionista_en_crisis<span class="sr-only"> (se abre en una ventana nueva)</span></a>
+  </div>
 
   <!-- Receta de ejemplo escrita como borrador: revisa cantidades, alérgenos y pasos antes de darla por buena -->
   <main id="contenido">
     <article class="rp wrap">
-      <a class="rp__back" href="../index.html#recetas"><i class="ico ico--arrow-left" aria-hidden="true"></i>Todas las recetas</a>
+      <a class="rp__back" href="../index.html#recetas"><i class="arrow arrow--left" aria-hidden="true"></i>Todas las recetas</a>
       <header class="rp__head">
         <h1>Tortitas de avena y plátano</h1>
         <p class="rp__lead">Un desayuno de domingo que se prepara un martes. Sin huevo y con solo cuatro ingredientes de despensa.</p>
         <ul class="rp__meta" aria-label="Datos de la receta">
-          <li><i class="ico ico--clock" aria-hidden="true"></i>15 min</li>
+          <li>15 min</li>
           <li>2 personas (unas 6 tortitas)</li>
           <li>Desayuno</li>
         </ul>
       </header>
       <div class="rp__grid">
-        <figure class="photo photo--recipe rp__photo" style="view-transition-name: foto-tortitas-de-avena-y-platano" data-file="receta-3.jpg"><img src="../img/receta-3.jpg" alt="Tortitas de avena y plátano" width="1200" height="900" fetchpriority="high"></figure>
+        <figure class="photo rp__photo rp__photo--desayunos" data-n="01" data-file="receta-3.jpg"><img src="../img/receta-3.jpg" alt="Tortitas de avena y plátano" width="1200" height="900" fetchpriority="high"></figure>
         <section class="rp__ing" aria-labelledby="ing">
           <h2 id="ing">Ingredientes</h2>
         <h3>Masa</h3>
@@ -74,17 +84,19 @@
         </section>
       </div>
       <p class="rp__note">Si tienes alguna alergia o intolerancia, revisa las etiquetas de los ingredientes.</p>
-      <a class="btn" href="../index.html#recetas">Ver más recetas <i class="ico ico--arrow" aria-hidden="true"></i></a>
+      <a class="btn" href="../index.html#recetas">Ver más recetas <i class="arrow" aria-hidden="true"></i></a>
     </article>
   </main>
 
   <footer class="footer">
-    <div class="wrap footer__row">
-      <p>Nutricionista en crisis</p>
-      <p>Los contenidos son divulgativos y no sustituyen una consulta individual.</p>
+    <div class="wrap">
+      <p class="footer__brand">Nutricionista <em>en crisis</em></p>
+      <div class="footer__row">
+        <p>Los contenidos son divulgativos y no sustituyen una consulta individual.</p>
+      </div>
     </div>
   </footer>
 
-  <script src="../js/main.js?v=202610181300" defer></script>
+  <script src="../js/main.js?v=202611141800" defer></script>
 </body>
 </html>
