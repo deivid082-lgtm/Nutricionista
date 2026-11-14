@@ -377,3 +377,16 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
   .rp__photo { animation: open-rp 1.1s var(--ease-io) .1s both; }
   @keyframes open-rp { from { clip-path: inset(0 0 100% 0 round 26px); } to { clip-path: inset(0 0 0 0 round 26px); } }
 }
+
+/* Página legal */
+.legal { padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 7vw, 5rem); max-width: 46rem; }
+.legal h1 { font: 400 clamp(2.8rem, 9vw, 5rem)/1 var(--font-display); letter-spacing: -.035em; }
+.legal h2 { font-size: clamp(1.5rem, 4vw, 1.9rem); margin-top: 2.5rem; }
+.legal p, .legal ul { margin-top: .9rem; color: var(--muted); }
+.legal ul { padding-left: 1.2rem; list-style: disc; display: grid; gap: .4rem; }
+.legal strong { color: var(--ink); }
+.legal a:not(.btn) { color: var(--accent-text); }
+.legal__date { font-size: .95rem; }
+.legal .btn { margin-top: 2.5rem; }
+.todo { background: #F6D9A6; color: #5A3207; padding: 0 .3em; border-radius: 4px; }
+.footer a { text-underline-offset: .2em; }
